@@ -1,0 +1,19 @@
+.computer-part-list {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+    padding: 10px;
+  }
