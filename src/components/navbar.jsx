@@ -1,18 +1,38 @@
 import React, { useState } from "react";
+import logo from "../assets/logo.svg"; // Import image
 import "./navbar.css"; // Import styles (create this file if needed)
 
 function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
+  let timeoutId = null; // To delay hiding dropdown
 
-  const toggleDropdown = (index) => {
-    setOpenDropdown(openDropdown === index ? null : index);
+  const showDropdown = (index) => {
+    clearTimeout(timeoutId); // Prevent closing
+    setOpenDropdown(index);
+  };
+
+  const hideDropdown = () => {
+    timeoutId = setTimeout(() => {
+      setOpenDropdown(null);
+    }, ); // Small delay to prevent flickering
   };
 
   return (
     <div className="navbar">
+      
+      <a href="http://localhost:5173/">
+        <img src={logo} className="logo" />
+      </a>
+      
+      
+
       {/* Kompiuterių komponentai */}
-      <div className="dropdown">
-        <button onMouseEnter={() => toggleDropdown(1)} className="dropdown-button">
+      <div
+        className="dropdown"
+        onMouseEnter={() => showDropdown(1)}
+        onMouseLeave={hideDropdown}
+      >
+        <button className="dropdown-button">
           Kompiuterių komponentai
         </button>
         {openDropdown === 1 && (
@@ -26,8 +46,12 @@ function Navbar() {
       </div>
 
       {/* Išorinės duomenų laikmenos */}
-      <div className="dropdown">
-        <button onMouseEnter={() => toggleDropdown(2)} className="dropdown-button">
+      <div
+        className="dropdown"
+        onMouseEnter={() => showDropdown(2)}
+        onMouseLeave={hideDropdown}
+      >
+        <button className="dropdown-button">
           Išorinės duomenų laikmenos
         </button>
         {openDropdown === 2 && (
@@ -40,8 +64,12 @@ function Navbar() {
       </div>
 
       {/* Kompiuterių priedai ir aksesuarai */}
-      <div className="dropdown">
-        <button onMouseEnter={() => toggleDropdown(3)} className="dropdown-button">
+      <div
+        className="dropdown"
+        onMouseEnter={() => showDropdown(3)}
+        onMouseLeave={hideDropdown}
+      >
+        <button className="dropdown-button">
           Kompiuterių priedai ir aksesuarai
         </button>
         {openDropdown === 3 && (
