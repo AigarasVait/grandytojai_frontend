@@ -17,6 +17,8 @@
   --accent-color: #e74016;
   --background-color: #ffffff;
   --line-color: #ffffff33;
+  --text-color: #fdfdfd;
+  --text-color-dark: #0f0f0f;
 }
 body {
   padding-top: 60px;
