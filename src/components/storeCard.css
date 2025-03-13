@@ -1,0 +1,39 @@
+.store-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: var(--secondary-color);
+    gap: 16px;
+  }
+  
+.store-name{
+    font-size: 24px;
+}
+
+.store-price{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    margin-left: auto;
+}
+
+.store-button:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+}
+
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    color: var(--secondary-color);
+}
