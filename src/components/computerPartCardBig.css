@@ -1,0 +1,24 @@
+.computer-part-card.big {
+  flex-direction: row;
+  width: 1200px;
+  gap: 16px;
+  text-align: left;
+}
+.computer-part-card.big .image-placeholder {
+  flex: 0 0 30%;
+  height: 250px;
+}
+.computer-part-card.big .computer-part-info {
+  flex: 1;
+}
+.computer-part-card.big .computer-part-name {
+  font-size: 28px;
+}
+.computer-part-card.big .computer-part-price {
+  font-size: 28px;
+}
+.computer-part-card.big:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
