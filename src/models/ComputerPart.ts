@@ -3,5 +3,7 @@ export interface ComputerPart {
     partName: string,
     partType: string,
     price: number,
-    imageUrl: string
+    imageUrl: string,
+    storeUrl: string,
+    storeName: string
 }
