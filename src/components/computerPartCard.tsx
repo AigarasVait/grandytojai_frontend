@@ -11,7 +11,7 @@ type Props = {
 export const ComputerPartCard: React.FC<Props> = ({ computerPart }) => {
   return (
     <NavLink to={`part/${computerPart.partName}`} className="computer-part-card" state={{ computerPart }}>
-      <div className="image-placeholder">Image</div>
+      <img src={computerPart.imageUrl} alt="Image" className="image-placeholder"></img>
       <div className="computer-part-info">
         <h3 className="computer-part-name">{computerPart.partName}</h3>
         <p className="computer-part-price">Price: €{computerPart.price.toFixed(2)}</p>

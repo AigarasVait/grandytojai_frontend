@@ -13,7 +13,7 @@ export const ComputerPartCardBig: React.FC = () => {
 
   return (
     <div className="computer-part-card big">
-      <div className="image-placeholder">Image</div>
+      <img src={computerPart.imageUrl} alt="Image" className="image-placeholder"></img>
       <div className="computer-part-info">
         <h3 className="computer-part-name">{computerPart.partName}</h3>
         <p className="computer-part-price">Price: €{computerPart.price.toFixed(2)}</p>

@@ -12,8 +12,8 @@ export const StoreCard: React.FC = () => {
   }
 
   return (
-    <a className="store-card">
-      <div className="store-name">Store Name</div>
+    <a href={computerPart.storeUrl} target="_blank" className="store-card">
+      <div className="store-name">{computerPart.storeName}</div>
       <div className="store-price">Price: €{computerPart.price.toFixed(2)}</div>
       <button className="store-button">Go to store</button>
     </a>
