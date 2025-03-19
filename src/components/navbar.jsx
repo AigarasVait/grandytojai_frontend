@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.svg"; // Import image
 import "./navbar.css"; // Import styles (create this file if needed)
+import { API_BEST_DEAL_ENDPOINT } from '../constants/api';
 
 function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);

@@ -15,18 +15,16 @@
 
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: 38px;
   object-fit: scale-down;
-  filter: invert(50%) sepia(60%) saturate(800%) hue-rotate(170deg);
-  rotate: 270deg;
+  filter: grayscale(100%) brightness(1000%) ;
+}
+a:hover .logo {
+  filter: brightness(100%); /* Example: Darken on hover */   /* Example: Slight zoom effect */
+  transition: filter 0.3s ease-in-out;
 }
 
-.logoBorder {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
 
 
 .dropdown {
