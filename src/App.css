@@ -12,13 +12,13 @@
   text-align: center;
 }
 :root {
-  --primary-color: #29a4ff;
-  --secondary-color: #171b1f	;
-  --accent-color: #e74016;
-  --background-color: #ffffff;
-  --line-color: #ffffff33;
-  --text-color: #fdfdfd;
-  --text-color-dark: #0f0f0f;
+  --primary-color: #08c5ff;
+  --secondary-color: #182029; /* Deep Slate Blue */
+  --accent-color: #f3251e;    /* Golden Yellow */
+  --background-color: #eaedee; /* Soft Light Gray */
+  --line-color: #647179;      /* Cool Gray */     /* Charcoal Blue */
+  --text-color-light: #eeeeee; /* Muted Gray */
+  --text-color-dark: #181818; /* Dark Charcoal */
 }
 body {
   padding-top: 60px;

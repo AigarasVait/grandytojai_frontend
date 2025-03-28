@@ -1,5 +1,7 @@
 .navbar {
   position: fixed;
+  padding-left: 50px;
+  padding-right: 50px;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,18 +15,56 @@
   z-index: 1000;
 }
 
+.separator {
+  margin: 20px;
+  width: 1px;
+  height: 43px;
+  background-color: var(--line-color);; 
+  margin: 0 0px; 
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;  /* Center the logo horizontally */
+  align-items: center;      /* Center the logo vertically */
+}
+
+.logo path {
+  fill: var(--primary-color);
+}
 
 .logo {
   width: auto;
   height: 38px;
   object-fit: scale-down;
-  filter: grayscale(100%) brightness(1000%) ;
-}
-a:hover .logo {
-  filter: brightness(100%); /* Example: Darken on hover */   /* Example: Slight zoom effect */
-  transition: filter 0.3s ease-in-out;
+  rotate: 0deg;
+  transition: 0.3s ease-in-out;
 }
 
+a:hover .logo {
+  filter: brightness(100%); 
+  fill: var(--primary-color);
+  rotate: -90deg;
+}
+
+a:hover .logo path {
+  filter: brightness(75%); 
+  transition: 0.3s ease-in-out;
+}
+
+/* a:hover .logo {
+  filter: brightness(100%); 
+  rotate: -90deg;
+  animation: bounce-down 0.6s ease-in-out 0.5s;
+} */
+
+@keyframes bounce-down {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(3px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
 
 
 .dropdown {
@@ -35,9 +75,9 @@ a:hover .logo {
 
 .dropdown-button {
   background: transparent;
-  color: var(--text-color);
-  font-size: 16px;
-  padding: 16px 20px;
+  color: var(--text-color-light);
+  font-size: 14px;
+  padding: 5px;
   border: none;
   cursor: pointer;
   display: flex;
@@ -79,10 +119,10 @@ a:hover .logo {
 
 .dropdown-content a {
   display: block;
-  color: var(--text-color);
+  color: var(--text-color-light);
   padding: 12px 16px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
   transition: color 0.2s ease-out, background 0.2s ease-in-out;
   border-bottom: 1px solid var(--line-color);
   border-radius: 4px;
@@ -95,3 +135,27 @@ a:hover .logo {
 .dropdown-content a:hover {
   color: var(--primary-color);
 }
+
+.deal-button {
+  background: transparent;
+  color: var(--text-color-light);
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.deal-button:hover {
+  color: var(--accent-color);
+}
+
+.deal-button:active,
+.deal-button:focus {
+  outline: none;
+}
+
+
