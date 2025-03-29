@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
 * {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -12,13 +12,13 @@
   text-align: center;
 }
 :root {
-  --primary-color: #29a4ff;
-  --secondary-color: #171b1f	;
-  --accent-color: #e74016;
-  --background-color: #ffffff;
-  --line-color: #ffffff33;
-  --text-color: #fdfdfd;
-  --text-color-dark: #0f0f0f;
+  --primary-color: #08c5ff;
+  --secondary-color: #182029; 
+  --accent-color: #fd4d4d;    
+  --background-color: #eaedee; 
+  --line-color: #647179;      
+  --text-color-light: #eeeeee; 
+  --text-color-dark: #181818; 
 }
 body {
   padding-top: 60px;

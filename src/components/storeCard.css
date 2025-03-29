@@ -16,24 +16,32 @@
   
 .store-name{
     font-size: 24px;
+    margin-left: 20px;
 }
 
 .store-price{
     font-size: 30px;
     font-weight: bold;
-    color: red;
+    color: var(--accent-color);
     margin-left: auto;
 }
 
+.store-button{
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    transition: 0.3s ease-in-out;
+    margin-right: 10px;
+}
+
 .store-button:hover{
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background: rgba(0, 0, 0, 0.75);
+    
     transition: 0.3s ease-in-out;
 }
 
 .store-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--primary-color), transparent 70%);
     cursor: pointer;
-    color: var(--secondary-color);
+    color: var(--text-color-dark);
+    border: 1px solid var(--primary-color);
 }

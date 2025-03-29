@@ -3,8 +3,12 @@
   width: 1200px;
   gap: 16px;
   text-align: left;
+  transition:none;
+  
 }
 .computer-part-card.big .image-placeholder {
+  margin-left: 23px;
+  margin-right: 23px;
   flex: 0 0 30%;
   height: 250px;
 }
@@ -19,6 +23,8 @@
 }
 .computer-part-card.big:hover {
   transform: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: default;
 }

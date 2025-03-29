@@ -1,30 +1,32 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.svg"; // Import image
-import "./navbar.css"; // Import styles (create this file if needed)
+import Logo from "../assets/logo.svg?react";
+import "./navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
-  let timeoutId = null; // To delay hiding dropdown
+  let timeoutId = null;
 
   const showDropdown = (index) => {
-    clearTimeout(timeoutId); // Prevent closing
+    clearTimeout(timeoutId);
     setOpenDropdown(index);
   };
 
   const hideDropdown = () => {
     timeoutId = setTimeout(() => {
       setOpenDropdown(null);
-    }, ); // Small delay to prevent flickering
+    });
   };
 
   return (
     <div className="navbar">
-      
-      <a href="http://localhost:5173/">
-        <img src={logo} className="logo" />
-      </a>
-      
-      
+      <Link to="/">
+        <div className="logo-container">
+          <Logo className="logo" />
+        </div>
+      </Link>
+
+      <div className="separator"></div>
 
       {/* Kompiuterių komponentai */}
       <div
@@ -32,9 +34,7 @@ function Navbar() {
         onMouseEnter={() => showDropdown(1)}
         onMouseLeave={hideDropdown}
       >
-        <button className="dropdown-button">
-          Kompiuterių komponentai
-        </button>
+        <button className="dropdown-button">Kompiuterių komponentai</button>
         {openDropdown === 1 && (
           <div className="dropdown-content">
             <a href="#">Kompiuterių platformos (Barebone)</a>
@@ -51,9 +51,7 @@ function Navbar() {
         onMouseEnter={() => showDropdown(2)}
         onMouseLeave={hideDropdown}
       >
-        <button className="dropdown-button">
-          Išorinės duomenų laikmenos
-        </button>
+        <button className="dropdown-button">Išorinės duomenų laikmenos</button>
         {openDropdown === 2 && (
           <div className="dropdown-content">
             <a href="#">Diskų korpusai (HDD cases)</a>
@@ -80,7 +78,19 @@ function Navbar() {
           </div>
         )}
       </div>
+
+      <div className="separator"></div>
+
+      <Link to="/best-deals">
+        <button className="deal-button">
+          Geriausi pasiūlymai
+        </button>
+      </Link>
+
+      
+      
     </div>
+    
   );
 }
 

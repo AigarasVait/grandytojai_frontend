@@ -14,7 +14,7 @@ export const StoreCard: React.FC = () => {
   return (
     <a href={computerPart.storeUrl} target="_blank" className="store-card">
       <div className="store-name">{computerPart.storeName}</div>
-      <div className="store-price">Price: €{computerPart.price.toFixed(2)}</div>
+      <div className="store-price">€{computerPart.price.toFixed(2)}</div>
       <button className="store-button">Go to store</button>
     </a>
   );
