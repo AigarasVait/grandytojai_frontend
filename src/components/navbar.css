@@ -1,7 +1,5 @@
 .navbar {
   position: fixed;
-  padding-left: 50px;
-  padding-right: 50px;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,15 +32,14 @@
 }
 
 .logo {
-  width: auto;
-  height: 38px;
+  width: 35px;
+  height: 35px;
   object-fit: scale-down;
   rotate: 0deg;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 a:hover .logo {
-  filter: brightness(100%); 
   fill: var(--primary-color);
   rotate: -90deg;
 }
@@ -76,8 +73,8 @@ a:hover .logo path {
 .dropdown-button {
   background: transparent;
   color: var(--text-color-light);
-  font-size: 14px;
-  padding: 5px;
+  font-size: 15px;
+  padding: 16px 20px;;
   border: none;
   cursor: pointer;
   display: flex;
@@ -99,7 +96,7 @@ a:hover .logo path {
 .dropdown-content {
   position: absolute;
   top: 100%;
-  left: 0; 
+  left: 0;
   background: var(--secondary-color);
   min-width: 220px;
   border-radius: 8px;
@@ -122,7 +119,7 @@ a:hover .logo path {
   color: var(--text-color-light);
   padding: 12px 16px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
   transition: color 0.2s ease-out, background 0.2s ease-in-out;
   border-bottom: 1px solid var(--line-color);
   border-radius: 4px;
@@ -138,8 +135,8 @@ a:hover .logo path {
 
 .deal-button {
   background: transparent;
-  color: var(--text-color-light);
-  font-size: 14px;
+  color: var(--accent-color);
+  font-size: 15px;
   padding: 5px;
   border: none;
   cursor: pointer;
@@ -150,7 +147,7 @@ a:hover .logo path {
 }
 
 .deal-button:hover {
-  color: var(--accent-color);
+  color: var(--text-color-light);
 }
 
 .deal-button:active,
