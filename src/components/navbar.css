@@ -69,7 +69,7 @@ a:hover .logo path {
 
 .dropdown {
   display: flex;
-  align-items: center; /* Aligns button inside dropdown */
+  align-items: center;
   position: relative;
 }
 
@@ -99,7 +99,7 @@ a:hover .logo path {
 .dropdown-content {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 0; 
   background: var(--secondary-color);
   min-width: 220px;
   border-radius: 8px;
