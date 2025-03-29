@@ -9,8 +9,14 @@ const routes = [
         path: '/',
         element: <App />,
         children: [
-            {path: 'part/:partName', element: <ComputerPartPage/> },
-            {path: 'best-deals', element: <BestDealsPage/> }
+            { path: 'part/:partName', element: <ComputerPartPage /> },
+            { 
+              path: 'best-deals',
+              element: <BestDealsPage />,
+              children: [
+                { path: 'part/:partName', element: <ComputerPartPage /> } // Same component
+              ]
+            }
         ]
     }
 ];
