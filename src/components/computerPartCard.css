@@ -31,15 +31,15 @@
   }
   
   .computer-part-name {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     margin: 8px 0;
   }
   
   .computer-part-price {
-    font-size: 20px;
+    font-size: 21px;
     color: var(--accent-color);
-    font-weight: 800;
+    font-weight: 750;
   }
   
   .computer-part-barcode {
