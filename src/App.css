@@ -13,12 +13,12 @@
 }
 :root {
   --primary-color: #08c5ff;
-  --secondary-color: #182029; /* Deep Slate Blue */
-  --accent-color: #f3251e;    /* Golden Yellow */
-  --background-color: #eaedee; /* Soft Light Gray */
-  --line-color: #647179;      /* Cool Gray */     /* Charcoal Blue */
-  --text-color-light: #eeeeee; /* Muted Gray */
-  --text-color-dark: #181818; /* Dark Charcoal */
+  --secondary-color: #182029; 
+  --accent-color: #f3251e;    
+  --background-color: #eaedee; 
+  --line-color: #647179;      
+  --text-color-light: #eeeeee; 
+  --text-color-dark: #181818; 
 }
 body {
   padding-top: 60px;
