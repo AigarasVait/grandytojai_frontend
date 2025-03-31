@@ -1,7 +1,7 @@
 import { createBrowserRouter, Route } from "react-router-dom";
 import App from "../App";
-import { ComputerPartPage } from "../components/computerPartPage";
-import { BestDealsPage } from "../components/bestDealsPage";
+import { ComputerPartPage } from "../components/computer_part/computerPartPage";
+import { BestDealsPage } from "../components/best_deals/bestDealsPage";
 
 
 const routes = [
@@ -9,12 +9,12 @@ const routes = [
         path: '/',
         element: <App />,
         children: [
-            { path: 'part/:partName', element: <ComputerPartPage /> },
+            { path: 'part/:barcode', element: <ComputerPartPage /> },
             { 
               path: 'best-deals',
               element: <BestDealsPage />,
               children: [
-                { path: 'part/:partName', element: <ComputerPartPage /> } // Same component
+                { path: 'part/:barcode', element: <ComputerPartPage /> } // Same component
               ]
             }
         ]

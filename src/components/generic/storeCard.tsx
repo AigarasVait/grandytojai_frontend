@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./storeCard.css";
-import { ComputerPart } from "../models/ComputerPart";
+import { ComputerPart } from "../../models/ComputerPart";
 
 export const StoreCard: React.FC = () => {
   const location = useLocation();

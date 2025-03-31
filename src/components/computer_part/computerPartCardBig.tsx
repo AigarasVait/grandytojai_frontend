@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./computerPartCardBig.css";
-import { ComputerPart } from "../models/ComputerPart";
+import { ComputerPart } from "../../models/ComputerPart";
 
 export const ComputerPartCardBig: React.FC = () => {
   const location = useLocation();
@@ -13,7 +13,11 @@ export const ComputerPartCardBig: React.FC = () => {
 
   return (
     <div className="computer-part-card big">
-      <img src={computerPart.imageUrl} alt="Image" className="image-placeholder"></img>
+      <img
+        src={computerPart.imageUrl}
+        alt="Image"
+        className="image-placeholder"
+      ></img>
       <div className="computer-part-info">
         <h3 className="computer-part-name">{computerPart.partName}</h3>
         <p className="computer-part-price">€{computerPart.price.toFixed(2)}</p>
