@@ -26,6 +26,13 @@ export const getComputerPartsByType = async <ComputerPart>(partType: string, lim
     return response.data; 
 }
 
+export const getComputerPartsByBarcode = async <ComputerPart>(barcode: string): Promise<ComputerPart[]>  => {
+    const url = urlJoin(API_COMPUTER_PART_ENDPOINT, 'part', barcode)
+    const response = await apiClient.get<ComputerPart[]>(url);
+    return response.data; 
+}
+
+
 export const getComputerPartsDeals = async <ComputerPart>(limit: number, page: number): Promise<ComputerPart[]>  => {
     const response = await apiClient.get<ComputerPart[]>(API_BEST_DEAL_ENDPOINT, {
         params: { limit, page }
