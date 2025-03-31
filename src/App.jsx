@@ -26,6 +26,13 @@ function App() {
             setPageSize={setPageSize}
             />
           <ComputerPartList currentPage={currentPage} pageSize={pageSize} searchValue={searchValue} />
+          <Pagination
+            currentPage={currentPage} 
+            pageSize={pageSize}
+            searchValue={searchValue}
+            setCurrentPage={setCurrentPage} 
+            setPageSize={setPageSize}
+            />
         </div>
       ) : (
         <Outlet/>
