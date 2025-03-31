@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
-import "./Pagination.css";
+import "./searchBar.css";
 
 interface SearchBarProps {
   setSearchValue: React.Dispatch<React.SetStateAction<string>>;
@@ -17,7 +17,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({setSearchValue}) => {
 
     return (
         <>
-            <input defaultValue={''} onChange={e => debounced(e.target.value)} />
+            <input className='search-bar' defaultValue={''} onChange={e => debounced(e.target.value)} />
         </>
     );
   };
