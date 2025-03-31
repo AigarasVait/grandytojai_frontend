@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getComputerPartsCount } from "../api/computerParts";
+import { getComputerPartsCount } from "../../api/computerParts";
 import "./Pagination.css";
 
 interface PaginationProps {
@@ -7,20 +7,21 @@ interface PaginationProps {
   setPageSize: React.Dispatch<React.SetStateAction<number>>;
   currentPage: number;
   pageSize: number;
+  searchValue: string;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ setCurrentPage, setPageSize, currentPage, pageSize }) => {
+const Pagination: React.FC<PaginationProps> = ({ setCurrentPage, setPageSize, currentPage, pageSize, searchValue }) => {
     const [totalCount, setTotalCount] = useState(0);
   
     // Fetch total count of parts when the component mounts
     useEffect(() => {
       const fetchCount = async () => {
-        const count = await getComputerPartsCount(); // Fetch total count from your API
+        const count = await getComputerPartsCount(searchValue); // Fetch total count from your API
         setTotalCount(count);
       };
   
       fetchCount();
-    }, []);
+    }, [searchValue]);
   
     // Calculate total pages based on totalCount and pageSize
     const totalPages = Math.ceil(totalCount / pageSize);
