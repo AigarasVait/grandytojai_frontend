@@ -3,9 +3,11 @@ import { useLocation } from "react-router-dom";
 import "./storeCard.css";
 import { ComputerPart } from "../../models/ComputerPart";
 
-export const StoreCard: React.FC = () => {
-  const location = useLocation();
-  const computerPart: ComputerPart | undefined = location.state?.computerPart;
+type Props = {
+  computerPart: ComputerPart;
+};
+
+export const StoreCard: React.FC<Props> = ({computerPart}) => {
 
   if (!computerPart) {
     return <p>No computer part found!</p>; // Handle if no data is passed
