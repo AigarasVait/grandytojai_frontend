@@ -17,7 +17,7 @@ export const ComputerPartPage: React.FC = () => {
   useEffect(() => {
       const fetchComputerPartStores = async () => {
           try {
-              const computerPartsResponse = await getComputerPartsByBarcode<ComputerPart>(computerPart.barcode);
+              const computerPartsResponse = await getComputerPartsByBarcode<ComputerPart>(encodeURIComponent(computerPart.barcode));
               setComputerPartStores(computerPartsResponse)
           } catch (err: any) {
               setError(err.message)
