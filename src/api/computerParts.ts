@@ -11,6 +11,13 @@ export const getComputerPartsCount = async (searchValue?: string): Promise<numbe
     return response.data;
 }
 
+export const getComputerPartsCountByCategory = async (category?: string): Promise<number> => {
+    const response = await apiClient.get<number>(`${API_COMPUTER_PART_ENDPOINT}/countByType`, {
+        params: { category }
+    })
+    return response.data;
+}
+
 export const getComputerParts = async <ComputerPart>(limit: number, page: number, searchValue?: string): Promise<ComputerPart[]> => {
     const response = await apiClient.get<ComputerPart[]>(API_COMPUTER_PART_ENDPOINT, {
         params: { limit, page, searchValue }
