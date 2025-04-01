@@ -10,7 +10,7 @@ type Props = {
 export const ComputerPartCard: React.FC<Props> = ({ computerPart }) => {
   return (
     <NavLink
-      to={`part/${encodeURIComponent(computerPart.barcode)}`}
+      to={`/part/${encodeURIComponent(computerPart.barcode)}`}
       className="computer-part-card"
       state={{ computerPart }}
     >
