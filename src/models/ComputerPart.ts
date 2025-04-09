@@ -5,5 +5,6 @@ export interface ComputerPart {
     price: number,
     imageUrl: string,
     storeUrl: string,
-    storeName: string
+    storeName: string,
+    hasDiscount: boolean
 }
