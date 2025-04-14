@@ -5,6 +5,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { SearchBar } from './components/generic/searchBar';
+import { Footer } from './components/generic/footer';
 
 function App() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
             setCurrentPage={setCurrentPage} 
             setPageSize={setPageSize}
             />
+          <Footer></Footer>
         </div>
       ) : (
         <Outlet/>
