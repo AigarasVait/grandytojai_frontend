@@ -125,6 +125,10 @@ const Pagination: React.FC<PaginationProps> = ({ setCurrentPage, setPageSize, cu
           disabled={currentPage === totalPages}>
           Next
         </button>
+        
+        <p>
+            Rasta prekių: {totalCount}
+        </p>
       </div>
     );
   };
