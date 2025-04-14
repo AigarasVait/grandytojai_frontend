@@ -1,0 +1,51 @@
+.partners-footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 40px;
+    border-left: 20px solid #f4f4f4;
+    border-right: 20px solid #f4f4f4;
+  }
+  
+  .footer-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .partners-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .partners-container.auto-scroll {
+    animation: marquee 20s linear infinite;
+  }
+  
+  .partner-logo {
+    flex: 0 0 auto;
+    max-height: 80px;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .partner-logo:hover {
+    transform: scale(1.1);
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
