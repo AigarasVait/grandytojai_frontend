@@ -146,7 +146,8 @@ a:hover .logo path {
   text-decoration: none;
 }
 
-.deal-button:hover {
+.deal-button:hover,
+.deal-button.favorites:hover {
   color: var(--text-color-light);
 }
 
@@ -155,4 +156,6 @@ a:hover .logo path {
   outline: none;
 }
 
-
+.deal-button.favorites { /* as neisivaizduoju kodel nukopinant .deal-button ir pervadinant i .favorite-button jis visiskai  */
+  color: gold;         /* nusprogsta kai content toks pats, todel cia bsk katastrofiskai pavadinta */
+}

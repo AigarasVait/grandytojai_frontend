@@ -3,6 +3,7 @@ import App from "../App";
 import { ComputerPartPage } from "../components/computer_part/computerPartPage";
 import { BestDealsPage } from "../components/best_deals/bestDealsPage";
 import { ComputerPartPageByCategory } from "../components/computer_part/computerPartPageByCategory"
+import { FavoritesPage } from "../components/favorites/favoritesPage";
 
 
 const routes = [
@@ -17,6 +18,13 @@ const routes = [
               element: <BestDealsPage />,
               children: [
                 { path: 'part/:barcode', element: <ComputerPartPage /> } // Same component
+              ]
+            },
+            { 
+              path: '/favorites',
+              element: <FavoritesPage />,
+              children: [
+                { path: 'part/:barcode', element: <ComputerPartPage /> }
               ]
             }
         ]

@@ -28,3 +28,44 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: default;
 }
+
+.favorite-button {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ccc;
+  z-index: 2;
+}
+
+.favorite-button:hover {
+  transform: scale(1.1);
+}
+
+.favorite-button.favorited {
+  color: gold;
+}
+
+.star-container {
+  display: flex;
+  justify-content: center;  /* Center the logo horizontally */
+  align-items: center;      /* Center the logo vertically */
+}
+
+.star {
+  width: 33px;
+  height: 33px;
+  object-fit: scale-down;
+  rotate: 0deg;
+  transition: 0.2s ease-in-out;
+}
