@@ -101,7 +101,13 @@ function Navbar() {
         </button>
       </Link>
 
-      
+      <div className="separator"></div>
+
+      <Link to="/favorites">
+        <button className="deal-button favorites">
+          Mėgstamos prekės
+        </button>
+      </Link>
       
     </div>
     
