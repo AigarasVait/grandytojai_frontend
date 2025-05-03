@@ -5,6 +5,10 @@ import { NavLink } from "react-router-dom";
 import Star from "../../assets/star.svg?react";
 import { getFavoriteBarcodes, saveFavoriteBarcodes } from "../../models/CookieUtils";
 
+function truncateText(text: string, maxLength: number): string {
+  return text.length > maxLength ? text.slice(0, maxLength) + "…" : text;
+}
+
 type Props = {
   computerPart: ComputerPart;
 };
@@ -39,7 +43,9 @@ export const ComputerPartCard: React.FC<Props> = ({ computerPart }) => {
           className="image-placeholder"
         ></img>
         <div className="computer-part-info">
-          <h3 className="computer-part-name">{computerPart.partName}</h3>
+          <h3 className="computer-part-name">
+            {truncateText(computerPart.partName, 80)}
+          </h3>
           <p className="computer-part-price"> €{computerPart.price.toFixed(2)}</p>
           <p className="computer-part-barcode">{computerPart.barcode}</p>
         </div>

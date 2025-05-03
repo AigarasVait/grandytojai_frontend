@@ -3,36 +3,35 @@ import { ComputerPart } from "../../models/ComputerPart";
 import { getComputerPartsByType } from "../../api/computerParts";
 import { ComputerPartCard } from "./computerPartCard";
 import "./computerPartList.css";
-import Pagination from "../generic/Pagination";
-import { useParams } from "react-router-dom";
-import Navbar from '../generic/navbar';
 import { ComputerPartList } from "./computerPartList";
+
 
 interface ComputerPartListProps {
   currentPage?: number;
   pageSize?: number;
+  category: string;
 }
 
-export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () => {
+export const ComputerPartCategoryList: React.FC<ComputerPartListProps> = ({
+  currentPage: initialPage = 1,
+  pageSize: initialSize = 40,
+  category
+}) => {
   const [computerParts, setComputerParts] = useState<ComputerPart[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(40);
-  const { category } = useParams();
+  const [currentPage, setCurrentPage] = useState(initialPage);
+  const [pageSize, setPageSize] = useState(initialSize);
   const [searchValue, setSearchValue] = useState<string>("");
-
 
   useEffect(() => {
     setCurrentPage(1);
   }, [category]);
 
   useEffect(() => {
-
     const fetchComputerParts = async () => {
-      
       try {
         const computerPartsResponse = await getComputerPartsByType<ComputerPart>(
-          category!.toUpperCase(),
+          category.toUpperCase(),
           pageSize,
           currentPage
         );
@@ -46,20 +45,10 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
   }, [category, currentPage, pageSize]);
 
   return (
-    <div className="computer-part-list">
-      {error && <p className="error-message">{error}</p>}
-      <Navbar setSearchValue={setSearchValue} />
-      <Pagination
-        currentPage={currentPage}
-        pageSize={pageSize}
-        searchValue={searchValue}
-        setCurrentPage={setCurrentPage}
-        setPageSize={setPageSize}
-        category={category}
-      />
+    <div className="computer-part-list-home">
       {searchValue && <ComputerPartList currentPage={currentPage} pageSize={pageSize} searchValue={searchValue} />}
 
-      <div className="grid-container">
+      <div className="grid-container-home ">
         {computerParts.length > 0 ? (
           computerParts.map((computerPart) => (
             <ComputerPartCard key={computerPart.barcode} computerPart={computerPart} />
@@ -68,14 +57,6 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
           <p>No parts found for this category.</p>
         )}
       </div>
-      <Pagination
-        currentPage={currentPage}
-        pageSize={pageSize}
-        searchValue={searchValue}
-        setCurrentPage={setCurrentPage}
-        setPageSize={setPageSize}
-        category={category}
-      />
     </div>
   );
 };

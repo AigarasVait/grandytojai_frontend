@@ -1,20 +1,41 @@
 .computer-part-list {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .error-message {
-    color: red;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    justify-content: center;
-    padding: 10px;
-    color: var(--text-color-dark);;
-  }
+  padding: 0px;
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  justify-content: center;
+  padding: 10px;
+  color: var(--text-color-dark);
+  ;
+}
+
+.computer-part-list-home {
+  padding: 0px;
+  width: 1700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container-home {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 20px;
+  padding: 10px;
+  color: var(--text-color-dark);
+  width: 1600px;
+  overflow-x: auto;
+}
