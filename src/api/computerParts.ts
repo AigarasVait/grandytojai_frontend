@@ -5,9 +5,6 @@ import { API_COMPUTER_PART_ENDPOINT } from '../constants/api';
 import { API_BEST_DEAL_ENDPOINT } from '../constants/api';
 
 export const getComputerPartsCount = async (searchValue?: string): Promise<number> => {
-    apiClient.interceptors.request.use((config) => {
-        console.log('[AXIOS] Request URL:', config.baseURL + config.url);
-    });
     const response = await apiClient.get<number>(`${API_COMPUTER_PART_ENDPOINT}/count`, {
         params: { searchValue }
     })
