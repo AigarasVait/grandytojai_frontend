@@ -13,6 +13,8 @@ function App() {
   const [pageSize, setPageSize] = useState(40);
   const [searchValue, setSearchValue] = useState();
 
+  console.log(import.meta.env.VITE_API_URL)
+
   return (
     <div>
       <Navbar />
