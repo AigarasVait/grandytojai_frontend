@@ -5,7 +5,7 @@ import { API_COMPUTER_PART_ENDPOINT } from '../constants/api';
 import { API_BEST_DEAL_ENDPOINT } from '../constants/api';
 
 export const getComputerPartsCount = async (searchValue?: string): Promise<number> => {
-    const response = await apiClient.get<number>(`${API_COMPUTER_PART_ENDPOINT}/count`, {
+    const response = await apiClient.get<number>(`https://grandytojai-load-balancer-1232181215.eu-north-1.elb.amazonaws.com/count`, {
         params: { searchValue }
     })
     return response.data;
