@@ -13,6 +13,7 @@ function App() {
   const [pageSize, setPageSize] = useState(40);
   const [searchValue, setSearchValue] = useState();
 
+  console.log(import.meta.env.MODE)
 
   return (
     <div>
