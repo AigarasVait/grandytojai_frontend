@@ -6,19 +6,23 @@ import svgr from 'vite-plugin-svgr';
 export default ({mode}) => {
   process.env = {...process.env, ...loadEnv(mode, process.cwd())}
 
-  return defineConfig({
-    plugins: [
-      react(),
-      svgr()  
-    ],
-    // server: {
-    //   proxy: {
-    //     '/api': {
-    //       target: process.env.VITE_API_URL,
-    //       changeOrigin: true,
-    //     },
-    //   },
-    // },
-  });
+  if (mode === "development") {
+    return defineConfig({
+      plugins: [
+        react(),
+        svgr()  
+      ],
+      server: {
+        proxy: {
+          '/api': {
+            target: process.env.VITE_API_URL,
+            changeOrigin: true,
+          },
+        },
+      },
+    });
+  } else {
+    return defineConfig({plugins: [react(), svgr()]});
+  }
   
 } 
