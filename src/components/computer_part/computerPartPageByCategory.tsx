@@ -60,7 +60,7 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
       {searchValue && <ComputerPartList currentPage={currentPage} pageSize={pageSize} searchValue={searchValue} />}
 
       <div className="grid-container">
-        {computerParts.length > 0 ? (
+        {computerParts.length > 0 && !searchValue ? (
           computerParts.map((computerPart) => (
             <ComputerPartCard key={`${computerPart.barcode}${computerPart.storeName}`} computerPart={computerPart} />
           ))
