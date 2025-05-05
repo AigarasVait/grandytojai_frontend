@@ -17,21 +17,23 @@ const Pagination: React.FC<PaginationProps> = ({ setCurrentPage, setPageSize, cu
     // Fetch total count of parts when the component mounts
     useEffect(() => {
       const fetchCount = async () => {
-        const count = await getComputerPartsCount(searchValue); // Fetch total count from your API
+        let count = 0;
+  
+        // Fetch count based on searchValue or category
+        if (searchValue) {
+          count = await getComputerPartsCount(searchValue); // Fetch based on search query
+        } else if (category) {
+          count = await getComputerPartsCountByCategory(category); // Fetch based on category
+        } else {
+          // Default count fetching logic (if no filters are applied)
+          count = await getComputerPartsCount(""); // Fetch count without any filters
+        }
+  
         setTotalCount(count);
       };
   
       fetchCount();
-    }, [searchValue]);
-
-    useEffect(() => {
-      const fetchCount = async () => {
-        const count = await getComputerPartsCountByCategory(category); // Fetch total count from your API
-        setTotalCount(count);
-      };
-  
-      fetchCount();
-    }, [category]);
+    }, [searchValue, category]);
   
   
     // Calculate total pages based on totalCount and pageSize
