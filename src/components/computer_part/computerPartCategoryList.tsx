@@ -51,7 +51,7 @@ export const ComputerPartCategoryList: React.FC<ComputerPartListProps> = ({
       <div className="grid-container-home ">
         {computerParts.length > 0 ? (
           computerParts.map((computerPart) => (
-            <ComputerPartCard key={computerPart.barcode} computerPart={computerPart} />
+            <ComputerPartCard key={`${computerPart.barcode}${computerPart.storeName}`} computerPart={computerPart} />
           ))
         ) : (
           <p>No parts found for this category.</p>
