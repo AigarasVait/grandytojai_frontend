@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import Logo from "../../assets/logo.svg?react";
 import "./navbar.css";
@@ -25,7 +26,7 @@ function Navbar({ setSearchValue }) {
   return (
     <div className="navbar-container">
       <div className="navbar">
-        <Link to="/">
+        <Link to="/" onClick={() => setSearchValue("")}>
           <div className="logo-container">
             <Logo className="logo" />
           </div>
@@ -34,13 +35,13 @@ function Navbar({ setSearchValue }) {
         <SearchBar setSearchValue={setSearchValue} />
 
         <div className="right-buttons">
-          <Link to="/best-deals">
+          <Link to="/best-deals"  onClick={() => setSearchValue("")}>
             <button className="deal-button">
               Geriausi pasiūlymai
             </button>
           </Link>
 
-          <Link to="/favorites">
+          <Link to="/favorites" onClick={() => setSearchValue("")}>
             <button className="deal-button favorites">
               Mėgstamos prekės
             </button>
@@ -58,9 +59,9 @@ function Navbar({ setSearchValue }) {
           <button className="dropdown-button">Kompiuterių komponentai &#9660;</button>
           {openDropdown === 1 && (
             <div className="dropdown-content">
-              <Link to="/category/gpu">Vaizdo plokštės (GPU)</Link>
-              <Link to="/category/cpu">Procesoriai (CPU)</Link>
-              <Link to="/category/motherboard">Pagrindinės plokštės ir priedai</Link>
+              <Link to="/category/gpu" onClick={() => setSearchValue("")}>Vaizdo plokštės (GPU)</Link>
+              <Link to="/category/cpu" onClick={() => setSearchValue("")}>Procesoriai (CPU)</Link>
+              <Link to="/category/motherboard" onClick={() => setSearchValue("")}>Pagrindinės plokštės ir priedai</Link>
             </div>
           )}
         </div>
@@ -74,8 +75,8 @@ function Navbar({ setSearchValue }) {
           <button className="dropdown-button">Aušinimo sistemos ir maitinimas &#9660;</button>
           {openDropdown === 2 && (
             <div className="dropdown-content">
-              <Link to="/category/cooler">Aušintuvai</Link>
-              <Link to="/category/psu">Maitinimo blokai (PSU)</Link>
+              <Link to="/category/cooler" onClick={() => setSearchValue("")}>Aušintuvai</Link>
+              <Link to="/category/psu" onClick={() => setSearchValue("")}>Maitinimo blokai (PSU)</Link>
             </div>
           )}
         </div>
@@ -91,8 +92,8 @@ function Navbar({ setSearchValue }) {
           </button>
           {openDropdown === 3 && (
             <div className="dropdown-content">
-              <Link to="/category/ram">Operatyvioji atmintis (RAM) </Link>
-              <Link to="/category/ssd">SDD ir HDD</Link>
+              <Link to="/category/ram" onClick={() => setSearchValue("")}>Operatyvioji atmintis (RAM) </Link>
+              <Link to="/category/ssd" onClick={() => setSearchValue("")}>SDD ir HDD</Link>
             </div>
           )}
         </div>
@@ -103,7 +104,7 @@ function Navbar({ setSearchValue }) {
           onMouseEnter={() => showDropdown(4)}
           onMouseLeave={hideDropdown}
         >
-          <button className="dropdown-button">Korpusai ir priedai &#9660;</button>
+          <button className="dropdown-button" onClick={() => setSearchValue("")}>Korpusai ir priedai &#9660;</button>
           {openDropdown === 4 && (
             <div className="dropdown-content lower">
               <Link to="/category/case">Kompiuterių korpusai</Link>
