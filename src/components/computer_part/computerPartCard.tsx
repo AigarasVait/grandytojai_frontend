@@ -31,7 +31,7 @@ export const ComputerPartCard: React.FC<Props> = ({ computerPart }) => {
   };
 
   return (
-    <div className="computer-part-card">
+    <div className={`computer-part-card ${!computerPart.seenInScrape ? "disabled" : ""}`}>
       <NavLink
         to={`/part/${encodeURIComponent(computerPart.barcode)}`}
         className="card-link"

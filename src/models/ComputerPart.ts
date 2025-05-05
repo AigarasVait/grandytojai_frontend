@@ -6,5 +6,6 @@ export interface ComputerPart {
     imageUrl: string,
     storeUrl: string,
     storeName: string,
-    hasDiscount: boolean
+    hasDiscount: boolean,
+    seenInScrape: boolean
 }
