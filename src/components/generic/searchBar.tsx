@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
+import { useLocation, useNavigate } from 'react-router-dom';
 import "./searchBar.css";
 
 interface SearchBarProps {
@@ -7,13 +8,31 @@ interface SearchBarProps {
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ setSearchValue }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const debounced = useDebouncedCallback(
-    (value) => {
-      setSearchValue(value);
-    },
-    1000
-  );
+  const params = new URLSearchParams(location.search);
+  const searchParam = params.get('search') || '';
+
+  const [inputValue, setInputValue] = useState(searchParam);
+
+  // Update parent search value and URL (debounced)
+  const debounced = useDebouncedCallback((value: string) => {
+    const newParams = new URLSearchParams(location.search);
+    if (value) {
+      newParams.set('search', value);
+    } else {
+      newParams.delete('search');
+    }
+
+    navigate({ pathname: location.pathname, search: newParams.toString() }, { replace: true });
+    setSearchValue(value);
+  }, 500);
+
+  // Keep input in sync if URL changes from outside (e.g., user clicks back)
+  useEffect(() => {
+    setInputValue(searchParam);
+  }, [searchParam]);
 
   return (
     <div className="search-wrapper">
@@ -23,11 +42,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({ setSearchValue }) => {
       <input
         className="search-bar"
         placeholder="Ieškok geriausios kainos..."
-        defaultValue=""
-        onChange={e => debounced(e.target.value)}
+        value={inputValue}
+        onChange={(e) => {
+          const value = e.target.value;
+          setInputValue(value);
+          debounced(value);
+        }}
       />
     </div>
-
-
   );
 };

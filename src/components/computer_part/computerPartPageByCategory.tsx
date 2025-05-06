@@ -4,7 +4,7 @@ import { getComputerPartsByType } from "../../api/computerParts";
 import { ComputerPartCard } from "./computerPartCard";
 import "./computerPartList.css";
 import Pagination from "../generic/Pagination";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Navbar from '../generic/navbar';
 import { ComputerPartList } from "./computerPartList";
 
@@ -19,8 +19,11 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(40);
   const { category } = useParams();
-  const [searchValue, setSearchValue] = useState<string>("");
+  const location = useLocation();
 
+  const params = new URLSearchParams(location.search);
+  const searchValueFromUrl = params.get('search') || '';  // Default to empty string if not found
+  const [searchValue, setSearchValue] = useState<string>(searchValueFromUrl);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -43,7 +46,7 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
     };
     setComputerParts([]);
     fetchComputerParts();
-  }, [category, currentPage, pageSize]);
+  }, [category, currentPage, pageSize, searchValue]);
 
   return (
     <div className="computer-part-list">
