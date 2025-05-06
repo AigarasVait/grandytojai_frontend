@@ -1,75 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
 * {
-    font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
-
 
 #root {
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1700px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
 }
 :root {
-  --primary-color: #08a4ff;
-  --secondary-color: #061114; 
-  --accent-color: #FF586F;    
-  --background-color: #f7f7f7; 
-  --line-color: #bdc0c2;      
-  --text-color-light: #eeeeee; 
-  --text-color-dark: #181818; 
-  --dark-color: #3c3c3d;
-  --light-color: rgba(228, 247, 252, 0.95);;
+	--primary-color: #08a4ff;
+	--secondary-color: #061114;
+	--accent-color: #ff586f;
+	--background-color: #f7f7f7;
+	--line-color: #bdc0c2;
+	--text-color-light: #eeeeee;
+	--text-color-dark: #181818;
+	--dark-color: #3c3c3d;
+	--light-color: rgba(228, 247, 252, 0.95);
 }
 body {
-  padding-top: 20px;
-  background-color: var(--background-color);
+	padding-top: 20px;
+	background-color: var(--background-color);
 }
 
 .part-container {
-  background-color: var(--dark-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px;
-  margin-bottom: 50px;
-  width: 1700px; 
-  max-width: 1700px;
-  border-radius: 30px; 
+	background-color: var(--dark-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px;
+	margin-bottom: 50px;
+	width: 1700px;
+	max-width: 1700px;
+	border-radius: 30px;
 }
 
 .part-container-text {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px;
-  color: var(--text-color-dark);
-  font-size: 22px;
-  font-weight: 500;
-  width: 1670px; 
-  max-width: 1670px;
-  margin-left: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px;
+	color: var(--text-color-dark);
+	font-size: 22px;
+	font-weight: 500;
+	width: 1670px;
+	max-width: 1670px;
+	margin-left: 20px;
 }
 
 .buffer {
-  width: 1600px;
-  height: 50px;
+	width: 1600px;
+	height: 50px;
 }
 
 .footer-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px;
-  margin: 0 auto;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px;
+	margin: 0 auto;
+	width: 100%;
 }
 
 a {
-  color: var(--text-color-dark);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 10px;
+	color: var(--text-color-dark);
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 10px;
 }
