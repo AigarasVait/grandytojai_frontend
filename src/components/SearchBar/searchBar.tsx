@@ -44,9 +44,19 @@ export const SearchBar: React.FC<SearchBarProps> = ({ setSearchValue }) => {
         placeholder="Ieškok geriausios kainos..."
         value={inputValue}
         onChange={(e) => {
-          const value = e.target.value;
-          setInputValue(value);
-          debounced(value);
+          setInputValue(e.target.value); // only update local state
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            const value = inputValue.trim();
+            const newParams = new URLSearchParams();
+            if (value) {
+              newParams.set('search', value);
+              newParams.set('page', '1');
+            }
+            navigate(`/results?${newParams.toString()}`);
+            setSearchValue(value);
+          }
         }}
       />
     </div>

@@ -7,7 +7,7 @@ import Pagination from '../generic/Pagination';
 import { useParams } from 'react-router-dom';
 import Navbar from '../generic/navbar';
 import { ComputerPartList } from './computerPartList';
-import { getFilter, saveFilter } from '../../models/CookieUtils';
+
 
 interface ComputerPartListProps {
 	currentPage?: number;
@@ -69,7 +69,6 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
 	return (
 		<div className='computer-part-list'>
 			{error && <p className='error-message'>{error}</p>}
-			<Navbar setSearchValue={setSearchValue} />
 			<Pagination
 				currentPage={currentPage}
 				pageSize={pageSize}

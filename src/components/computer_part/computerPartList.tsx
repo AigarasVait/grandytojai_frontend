@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ComputerPart } from '../../models/ComputerPart';
 
 import { getComputerParts } from "../../api/computerParts";
-import { ComputerPartCard } from './computerPartCard';
+import { ComputerPartCard } from './computerPartCard'; 
 import "./computerPartList.css";
 
 interface ComputerPartListProps {
