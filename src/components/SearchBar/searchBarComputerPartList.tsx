@@ -24,7 +24,8 @@ export const SearchResultsList: React.FC = () => {
         const parts = await getComputerPartsSearch<ComputerPart>(
           pageSize,
           currentPage,
-          searchValue
+          searchValue, 
+          filter
         );
         setComputerParts(parts);
         setError("");

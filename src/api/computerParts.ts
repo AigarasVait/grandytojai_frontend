@@ -59,11 +59,12 @@ export const getComputerPartsDeals = async <ComputerPart>(limit: number, page: n
 export const getComputerPartsSearch = async <ComputerPart>(
 	limit: number,
 	page: number,
-	searchValue?: string
+	searchValue?: string,
+	filter?: string
 ): Promise<ComputerPart[]> => {
 	const url = urlJoin(API_COMPUTER_PART_ENDPOINT, 'search');
 	const response = await apiClient.get<ComputerPart[]>(url, {
-		params: { limit, page, searchValue },
+		params: { limit, page, searchValue, filter },
 	});
 	return response.data;
 };
