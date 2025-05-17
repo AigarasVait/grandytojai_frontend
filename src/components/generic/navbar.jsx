@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Logo from "../../assets/logo.svg?react";
 import "./navbar.css";
-import { SearchBar } from './searchBar';
+import { SearchBar } from '../SearchBar/searchBar';
 
 
 

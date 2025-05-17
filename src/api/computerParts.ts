@@ -46,3 +46,16 @@ export const getComputerPartsDeals = async <ComputerPart>(limit: number, page: n
     });
     return response.data; 
 }
+
+export const getComputerPartsSearch = async <ComputerPart>(
+	limit: number,
+	page: number,
+	searchValue?: string,
+	filter?: string
+): Promise<ComputerPart[]> => {
+	const url = urlJoin(API_COMPUTER_PART_ENDPOINT, 'search');
+	const response = await apiClient.get<ComputerPart[]>(url, {
+		params: { limit, page, searchValue, filter },
+	});
+	return response.data;
+};
