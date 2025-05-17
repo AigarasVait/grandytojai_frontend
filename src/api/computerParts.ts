@@ -49,6 +49,12 @@ export const getComputerPartsByBarcode = async <ComputerPart>(barcode: string): 
 	return response.data;
 };
 
+export const getCheapestComputerPartsByBarcode = async <ComputerPart>(barcode: string): Promise<ComputerPart[]> => {
+	const url = urlJoin(API_COMPUTER_PART_ENDPOINT, 'cheapest/part');
+	const response = await apiClient.get<ComputerPart[]>(url, { params: { barcode } });
+	return response.data;
+};
+
 export const getComputerPartsDeals = async <ComputerPart>(limit: number, page: number): Promise<ComputerPart[]> => {
 	const response = await apiClient.get<ComputerPart[]>(API_BEST_DEAL_ENDPOINT, {
 		params: { limit, page },
