@@ -31,9 +31,7 @@ export const ComputerPartPage: React.FC = () => {
     <div className="computer-part-page">
       <ComputerPartCardBig />
       {
-        computerPartStores.map((computerPart) => (
-          <StoreCard key={`${computerPart.barcode}${computerPart.storeName}`} computerPart={computerPart} />
-        ))
+          <StoreCard key={`${computerPart.barcode}${computerPart.storeName}`} computerParts={computerPartStores} />
       }
     </div>
   );

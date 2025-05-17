@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ComputerPart } from "../../models/ComputerPart";
 
-import { getComputerParts, getComputerPartsByBarcode, getComputerPartsDeals } from "../../api/computerParts";
+import { getComputerParts, getCheapestComputerPartsByBarcode, getComputerPartsDeals } from "../../api/computerParts";
 import { ComputerPartCard } from "../computer_part/computerPartCard";
 import "./favoriteComputerPartList.css";
 import { getFavoriteBarcodes, saveFavoriteBarcodes } from "../../models/CookieUtils";
@@ -14,7 +14,7 @@ export const FavoriteComputerPartList = () => {
   useEffect(() => {
     const fetchComputerParts = async () => {
       try {
-        const computerPartsResponse = await getComputerPartsByBarcode<ComputerPart>(
+        const computerPartsResponse = await getCheapestComputerPartsByBarcode<ComputerPart>(
           favoriteBarcodes.join("\',\'"),
         );
         setComputerParts(computerPartsResponse);
