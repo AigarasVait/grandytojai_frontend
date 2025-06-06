@@ -2,7 +2,7 @@ import Navbar from './components/generic/navbar';
 import ScrollToTop from './components/generic/ScrollToTop';
 import { ComputerPartCategoryList } from './components/computer_part/computerPartCategoryList';
 import './App.css'
-import { BrowserRouter as Outlet, useLocation, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, useLocation, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Footer } from './components/generic/footer';
 
