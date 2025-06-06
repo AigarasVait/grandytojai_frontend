@@ -1,11 +1,10 @@
-import { createBrowserRouter, Route } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { ComputerPartPage } from "../components/computer_part/computerPartPage";
 import { BestDealsPage } from "../components/best_deals/bestDealsPage";
 import { ComputerPartPageByCategory } from "../components/computer_part/computerPartPageByCategory"
 import { FavoritesPage } from "../components/favorites/favoritesPage";
 import { SearchResults } from "../components/SearchBar/searchResultsPage";
-
 
 const routes = [
     {
@@ -19,7 +18,7 @@ const routes = [
               path: '/best-deals',
               element: <BestDealsPage />,
               children: [
-                { path: 'part/:barcode', element: <ComputerPartPage /> } // Same component
+                { path: 'part/:barcode', element: <ComputerPartPage /> }
               ]
             },
             { 

@@ -9,7 +9,7 @@ type Props = {
 export const StoreCard: React.FC<Props> = ({computerParts}) => {
 
   if (computerParts.length === 0) {
-    return <p>No computer part found!</p>; // Handle if no data is passed
+    return <p>No computer part found!</p>;
   }
 
   return (

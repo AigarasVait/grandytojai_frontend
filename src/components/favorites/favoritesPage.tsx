@@ -1,4 +1,3 @@
-import React from "react";
 import "./favoritesPage.css";
 import { Outlet, useLocation } from 'react-router-dom';
 import { FavoriteComputerPartList } from './favoriteComputerPartList';

@@ -1,6 +1,5 @@
 import React from 'react';
 import './footer.css';
-
 import kilobaitasLogo from '../../assets/shop_logos/kilobaitas.png';
 import skytechLogo from '../../assets/shop_logos/skytech.png';
 import itworkLogo from '../../assets/shop_logos/itwork.webp';

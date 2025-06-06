@@ -13,5 +13,5 @@ export const getFavoriteBarcodes = (): string[] => {
   
   export const saveFavoriteBarcodes = (barcodes: string[]) => {
     const encoded = encodeURIComponent(JSON.stringify(barcodes));
-    document.cookie = `favorites=${encoded}; path=/; max-age=31536000`; // 1 year
+    document.cookie = `favorites=${encoded}; path=/; max-age=31536000`;
   };

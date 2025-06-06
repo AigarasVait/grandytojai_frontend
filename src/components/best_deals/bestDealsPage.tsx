@@ -1,4 +1,3 @@
-import React from "react";
 import "./bestDealsPage.css";
 import { Outlet, useLocation } from 'react-router-dom';
 import { BestDealsPageComputerPartList } from './bestDealComputerPartList';

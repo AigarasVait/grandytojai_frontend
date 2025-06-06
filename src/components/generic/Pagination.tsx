@@ -14,19 +14,16 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({ setCurrentPage, setPageSize, currentPage, pageSize, searchValue, category }) => {
     const [totalCount, setTotalCount] = useState(0);
   
-    // Fetch total count of parts when the component mounts
     useEffect(() => {
       const fetchCount = async () => {
         let count = 0;
   
-        // Fetch count based on searchValue or category
         if (searchValue) {
-          count = await getComputerPartsCount(searchValue); // Fetch based on search query
+          count = await getComputerPartsCount(searchValue);
         } else if (category) {
-          count = await getComputerPartsCountByCategory(category); // Fetch based on category
+          count = await getComputerPartsCountByCategory(category);
         } else {
-          // Default count fetching logic (if no filters are applied)
-          count = await getComputerPartsCount(""); // Fetch count without any filters
+          count = await getComputerPartsCount("");
         }
   
         setTotalCount(count);
@@ -35,8 +32,6 @@ const Pagination: React.FC<PaginationProps> = ({ setCurrentPage, setPageSize, cu
       fetchCount();
     }, [searchValue, category]);
   
-  
-    // Calculate total pages based on totalCount and pageSize
     const totalPages = Math.ceil(totalCount / pageSize);
   
     // Handlers for page change and page size change

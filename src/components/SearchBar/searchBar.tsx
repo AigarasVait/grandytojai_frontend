@@ -29,7 +29,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({ setSearchValue }) => {
     setSearchValue(value);
   }, 500);
 
-  // Keep input in sync if URL changes from outside (e.g., user clicks back)
   useEffect(() => {
     setInputValue(searchParam);
   }, [searchParam]);
@@ -44,7 +43,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ setSearchValue }) => {
         placeholder="Ieškok geriausios kainos..."
         value={inputValue}
         onChange={(e) => {
-          setInputValue(e.target.value); // only update local state
+          setInputValue(e.target.value);
         }}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {

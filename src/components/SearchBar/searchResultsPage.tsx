@@ -1,7 +1,5 @@
-import React from "react";
 import { Outlet, useLocation } from 'react-router-dom';
 import { SearchResultsList } from './searchBarComputerPartList';
-
 
 export function SearchResults() {
   const location = useLocation();
