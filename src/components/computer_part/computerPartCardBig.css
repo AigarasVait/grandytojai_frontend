@@ -57,8 +57,8 @@
 
 .star-container {
   display: flex;
-  justify-content: center;  /* Center the logo horizontally */
-  align-items: center;      /* Center the logo vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .star {

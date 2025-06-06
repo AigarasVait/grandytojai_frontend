@@ -13,7 +13,7 @@ export const ComputerPartCardBig: React.FC = () => {
   );
 
   if (!computerPart) {
-    return <p>No computer part found!</p>; // Handle if no data is passed
+    return <p>No computer part found!</p>;
   }
 
   const toggleFavorite = () => {

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ComputerPart } from "../../models/ComputerPart";
-
-import { getComputerParts, getComputerPartsDeals } from "../../api/computerParts";
+import { getComputerPartsDeals } from "../../api/computerParts";
 import { ComputerPartCard } from "../computer_part/computerPartCard";
 import "./bestDealComputerPartList.css";
 

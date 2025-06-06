@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../../assets/logo.svg?react";
 import "./navbar.css";
 import { SearchBar } from '../SearchBar/searchBar';
-
-
-
 import { Link } from "react-router-dom";
 
 function Navbar({ setSearchValue }) {
@@ -20,7 +17,7 @@ function Navbar({ setSearchValue }) {
   const hideDropdown = () => {
     timeoutId = setTimeout(() => {
       setOpenDropdown(null);
-    }, 200); // Delay for transition effect
+    }, 200);
   };
 
   return (
@@ -50,7 +47,6 @@ function Navbar({ setSearchValue }) {
       </div>
 
       <div className="bottom-navbar">
-        {/* Dropdown 1 */}
         <div
           className="dropdown"
           onMouseEnter={() => showDropdown(1)}
@@ -66,7 +62,6 @@ function Navbar({ setSearchValue }) {
           )}
         </div>
 
-        {/* Dropdown 2 */}
         <div
           className="dropdown"
           onMouseEnter={() => showDropdown(2)}
@@ -81,7 +76,6 @@ function Navbar({ setSearchValue }) {
           )}
         </div>
 
-        {/* Dropdown 3 */}
         <div
           className="dropdown"
           onMouseEnter={() => showDropdown(3)}
@@ -98,7 +92,6 @@ function Navbar({ setSearchValue }) {
           )}
         </div>
 
-        {/* Dropdown 4 */}
         <div
           className="dropdown"
           onMouseEnter={() => showDropdown(4)}

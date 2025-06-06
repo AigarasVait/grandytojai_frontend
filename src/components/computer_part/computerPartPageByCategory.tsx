@@ -29,7 +29,7 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilter(event.target.value);
-    window.location.reload(); // You might want to replace this with dynamic sorting logic instead of reload
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -43,7 +43,6 @@ export const ComputerPartPageByCategory: React.FC<ComputerPartListProps> = () =>
           category!.toUpperCase(),
           pageSize,
           currentPage
-          // Optionally: pass filter as an argument if backend supports it
         );
         setComputerParts(computerPartsResponse);
       } catch (err: any) {

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ComputerPart } from "../../models/ComputerPart";
-
-import { getComputerParts, getCheapestComputerPartsByBarcode, getComputerPartsDeals } from "../../api/computerParts";
+import { getCheapestComputerPartsByBarcode } from "../../api/computerParts";
 import { ComputerPartCard } from "../computer_part/computerPartCard";
 import "./favoriteComputerPartList.css";
-import { getFavoriteBarcodes, saveFavoriteBarcodes } from "../../models/CookieUtils";
+import { getFavoriteBarcodes } from "../../models/CookieUtils";
 
 export const FavoriteComputerPartList = () => {
   const [computerParts, setComputerParts] = useState<ComputerPart[]>([]);

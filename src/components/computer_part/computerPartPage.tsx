@@ -1,6 +1,5 @@
 import React, { useState, useEffect }  from "react";
 import { useLocation } from "react-router-dom";
-
 import "./computerPartPage.css";
 import { StoreCard } from "../generic/storeCard";
 import { ComputerPartCardBig } from "./computerPartCardBig";

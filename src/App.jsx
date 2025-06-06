@@ -10,8 +10,6 @@ import { Footer } from './components/generic/footer';
 function App() {
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(40);
-  const [searchValue, setSearchValue] = useState();
 
   const renderCategoryList = (category) => {
     return (
@@ -94,9 +92,6 @@ function App() {
           <div className="part-container">
             {renderCategoryList('o')}
           </div>
-
-
-
 
           <div className="footer-container">
             <Footer></Footer>
